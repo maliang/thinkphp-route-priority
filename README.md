@@ -10,8 +10,21 @@
 
 ```bash
 composer require lartrix/thinkphp-route-priority
-php think service:discover
 ```
+
+如果希望安装或更新 Composer 依赖后自动刷新 ThinkPHP 服务发现，请在宿主项目的 `composer.json` 增加：
+
+```json
+{
+    "scripts": {
+        "post-autoload-dump": [
+            "@php think service:discover"
+        ]
+    }
+}
+```
+
+之后执行 `composer require lartrix/thinkphp-route-priority` 时会自动生成 `vendor/services.php`，无需再手动执行 `php think service:discover`。
 
 如果你的项目没有自动发现服务，也可以手动在 `app/provider.php` 中绑定：
 
