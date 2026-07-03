@@ -1,0 +1,33 @@
+{
+    "name": "lartrix/thinkphp-route-priority",
+    "description": "A ThinkPHP 8 route priority patch that prevents generic and prefix routes from shadowing exact static routes.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lartrix\\ThinkPHPRoutePriority\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lartrix\\ThinkPHPRoutePriority\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "topthink/framework": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "Lartrix\\ThinkPHPRoutePriority\\RoutePriorityService"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "php tests/RoutePriorityTest.php"
+    }
+}
